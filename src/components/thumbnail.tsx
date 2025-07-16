@@ -1,4 +1,3 @@
-// eslint-disable-next-line @next/next/no-img-element
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 interface ThumbnailProps {
