@@ -14,7 +14,7 @@ interface ConversationProps {
 
 export default function Conversation({ id }: ConversationProps) {
   const memberId = useMemberId();
-  const {onOpenProfile} = usePanel();
+  const { onOpenProfile } = usePanel();
   const { data: member, isLoading: memberLoading } = useGetMember({ memberId });
   const { results, status, loadMore } = useGetMessages({
     conversationId: id,
@@ -37,6 +37,7 @@ export default function Conversation({ id }: ConversationProps) {
       />
 
       <MessageList
+        channelCreationTime={0}
         data={results}
         variant="conversation"
         memberImage={member?.user.image}
