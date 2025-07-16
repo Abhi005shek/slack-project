@@ -40,7 +40,7 @@ export const useUpdateMember = () => {
         const response = await mutation(values);
         options?.onSuccess?.(response);
         return response;
-      } catch (error: Error) {
+      } catch (error: any) {
         setStatus("error");
         options?.onError?.(error);
         if (options?.throwError) {

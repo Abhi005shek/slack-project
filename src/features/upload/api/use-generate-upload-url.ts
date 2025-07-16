@@ -42,7 +42,7 @@ export const useGenerateUploadUrl = () => {
         const response = await mutation();
         options?.onSuccess?.(response);
         return response;
-      } catch (error: Error | any) {
+      } catch (error: any) {
         setStatus("error");
         options?.onError?.(error);
         if (options?.throwError) {

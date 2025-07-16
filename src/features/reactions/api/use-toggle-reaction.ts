@@ -8,7 +8,7 @@ type RequestType = {
   image?: Id<"_storage">;
   messageId: Id<"messages">;
 };
-type ResponseType = Id<"messages"> | null;
+type ResponseType = Id<"reactions"> | null;
 
 type Options = {
   onSuccess?: (data: ResponseType) => void;
@@ -46,7 +46,7 @@ export const useToggleReaction = () => {
         const response = await mutation(values);
         options?.onSuccess?.(response);
         return response;
-      } catch (error: Error) {
+      } catch (error: any) {
         setStatus("error");
         options?.onError?.(error);
         if (options?.throwError) {
