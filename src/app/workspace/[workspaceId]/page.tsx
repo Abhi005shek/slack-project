@@ -40,6 +40,7 @@ function Workspace() {
   }, [
     channelId,
     member,
+    isLoading,
     isAdmin,
     memberLoading,
     workspaceLoading,

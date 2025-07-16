@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { useUpdateMember } from "../api/use-update-member";
-import { usedeleteMember } from "../api/use-remove-member";
+import { useDeleteMember } from "../api/use-remove-member";
 import { useCurrentMember } from "../api/use-current-member";
 import useWorkspaceId from "@/hooks/use-workspace-id";
 import { toast } from "sonner";
@@ -55,7 +55,7 @@ export default function Profile({ memberId, onClose }: ProfileProps) {
   const { mutate: updateMember, isPending: isUpdatingMember } =
     useUpdateMember();
   const { mutate: removeMember, isPending: isRemovingMembe } =
-    usedeleteMember();
+    useDeleteMember();
 
   async function onRemove() {
     const ok = await confirmRemove();

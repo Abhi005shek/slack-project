@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {
   Popover,
   PopoverContent,
@@ -36,8 +38,8 @@ function EmojiPopover({
     setPopoverOpen(false);
 
     setTimeout(() => {
-        setTooltipOpen(false)
-    }, 500)
+      setTooltipOpen(false);
+    }, 500);
   };
 
   return (

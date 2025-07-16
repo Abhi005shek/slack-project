@@ -15,7 +15,7 @@ type Options = {
   throwError?: boolean;
 };
 
-export const usedeleteMember = () => {
+export const useDeleteMember = () => {
   const [data, setData] = useState<ResponseType>(null);
   const [error, setError] = useState<Error | null>(null);
 

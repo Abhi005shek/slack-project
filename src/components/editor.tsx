@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Quill, { Delta, Op, QuillOptions } from "quill";
 import "quill/dist/quill.snow.css";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
@@ -100,7 +102,7 @@ const Editor = ({
       },
     };
 
-    let quill = new Quill(editorContainer, options);
+    const quill = new Quill(editorContainer, options);
     quillRef.current = quill;
     quillRef.current.focus();
 
@@ -215,7 +217,7 @@ const Editor = ({
                 variant={"ghost"}
                 onClick={(e) => {
                   imageElementRef.current?.click();
-                  e.currentTarget?.blur()
+                  e.currentTarget?.blur();
                   quillRef.current?.focus();
                 }}
               >
