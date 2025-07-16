@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import Quill, { Delta, Op, QuillOptions } from "quill";
 import "quill/dist/quill.snow.css";
