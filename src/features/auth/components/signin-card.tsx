@@ -113,7 +113,7 @@ function SigninCard({ setState }: SignInCardProps) {
           </Button>
         </div>
         <p className="text-center text-xs text-muted-foreground">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <span
             onClick={() => setState("signUp")}
             className="hover:underline text-sky-700  cursor-pointer"

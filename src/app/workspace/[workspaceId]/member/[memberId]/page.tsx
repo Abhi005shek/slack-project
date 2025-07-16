@@ -9,7 +9,7 @@ import { Id } from "../../../../../../convex/_generated/dataModel";
 import { toast } from "sonner";
 import Conversation from "./conversation";
 
-export default function page() {
+export default function Member() {
   const workspaceId = useWorkspaceId();
   const memberId = useMemberId();
 
@@ -53,7 +53,5 @@ export default function page() {
     );
   }
 
-  return <Conversation id={conversationId}
-  
-  />;
+  return <Conversation id={conversationId} />;
 }

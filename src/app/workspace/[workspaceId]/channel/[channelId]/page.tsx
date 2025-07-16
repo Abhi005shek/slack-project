@@ -7,7 +7,7 @@ import ChatInput from "./chat-input";
 import { useGetMessages } from "@/features/messages/api/use-get-messages";
 import MessageList from "@/components/message-list";
 
-function page() {
+function Channel() {
   const channelId = useChannelId();
   const { results, status, loadMore } = useGetMessages({ channelId });
   const { data: channel, isLoading: channelLoading } = useGetChannel({
@@ -47,4 +47,4 @@ function page() {
   );
 }
 
-export default page;
+export default Channel;

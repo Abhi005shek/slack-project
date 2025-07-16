@@ -1,6 +1,6 @@
 import { useMutation } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
-import { Doc, Id } from "../../../../convex/_generated/dataModel";
+import {Id } from "../../../../convex/_generated/dataModel";
 import { useCallback, useMemo, useState } from "react";
 
 type RequestType = {name: string, workspaceId: Id<"workspaces">};

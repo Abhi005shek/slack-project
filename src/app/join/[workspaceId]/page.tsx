@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useGetWorkspaceInfo } from "@/features/workspaces/api/use-get-workspace-info";
 import { useJoin } from "@/features/workspaces/api/use-join";
-import { useNewJoinCode } from "@/features/workspaces/api/use-new-join-code";
+// import { useNewJoinCode } from "@/features/workspaces/api/use-new-join-code";
 import useWorkspaceId from "@/hooks/use-workspace-id";
 import { cn } from "@/lib/utils";
 import { Loader } from "lucide-react";
@@ -13,7 +13,7 @@ import { useEffect, useMemo } from "react";
 import VerificationInput from "react-verification-input";
 import { toast } from "sonner";
 
-function page() {
+function Join() {
   const router = useRouter();
   const workspaceId = useWorkspaceId();
   const { mutate, isPending } = useJoin();
@@ -22,10 +22,10 @@ function page() {
   const isMember = useMemo(() => data?.isMember, [data?.isMember]);
 
   useEffect(() => {
-    if(isMember){
+    if (isMember) {
       router.push(`/workspace/${workspaceId}`);
     }
-  }, [isMember, router, workspaceId])
+  }, [isMember, router, workspaceId]);
 
   function handleComplete(val: string) {
     mutate(
@@ -92,4 +92,4 @@ function page() {
   );
 }
 
-export default page;
+export default Join;

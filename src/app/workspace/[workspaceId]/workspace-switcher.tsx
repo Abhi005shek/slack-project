@@ -3,7 +3,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace";
@@ -15,9 +14,9 @@ import { useRouter } from "next/navigation";
 
 function WorkspaceSwitcher() {
   const router = useRouter();
-  const [_open, setOpen] = useCreateWorkspaceModal();
+  const [_, setOpen] = useCreateWorkspaceModal();
   const workspaceId = useWorkspaceId();
-  const { data: workspaces, isLoading: workspacesLoading } = useGetWorkspaces();
+  const { data: workspaces } = useGetWorkspaces();
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({
     id: workspaceId,
   });
@@ -59,10 +58,7 @@ function WorkspaceSwitcher() {
               <div className="shrink-0 size-9 relative overflow-hidden bg-[#616061] text-white font-semibold text-lg rounded-md flex items-center justify-center mr-2">
                 {workspace.name.charAt(0).toUpperCase()}
               </div>
-             <p className="truncate">
-              {workspace.name}
-
-             </p>
+              <p className="truncate">{workspace.name}</p>
             </DropdownMenuItem>
           );
         })}

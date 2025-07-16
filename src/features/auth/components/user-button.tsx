@@ -9,12 +9,10 @@ import {
 import { useCurrentUser } from "@/features/auth/api/use-current-user";
 import { Loader, LogOut } from "lucide-react";
 import { useAuthActions } from "@convex-dev/auth/react";
-import { useRouter } from "next/navigation";
 
 function UserButton() {
   const { signOut } = useAuthActions();
   const { data, isLoading } = useCurrentUser();
-  const router = useRouter();
 
   if (isLoading) {
     return <Loader className="size-4 animate-spin text-muted-foreground" />;

@@ -1,5 +1,3 @@
-import { Separator } from "@/components/ui/separator";
-
 export default function NotFound() {
   return (
     <div className="h-full  flex items-center justify-center">

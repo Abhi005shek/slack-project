@@ -8,7 +8,7 @@ import { Loader, TriangleAlert } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useMemo } from "react";
 
-function page() {
+function Workspace() {
   const workspaceId = useWorkspaceId();
   const router = useRouter();
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({
@@ -80,4 +80,4 @@ function page() {
   );
 }
 
-export default page;
+export default Workspace;

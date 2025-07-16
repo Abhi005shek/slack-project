@@ -3,7 +3,6 @@ import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace";
 import useWorkspaceId from "@/hooks/use-workspace-id";
 import { Info, Search } from "lucide-react";
 import {
-  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,
@@ -11,7 +10,6 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import { useState } from "react";
 import { useGetChannels } from "@/features/channels/api/use-get-channels";
@@ -57,7 +55,7 @@ function Toolbar() {
             <CommandSeparator />
             <CommandGroup heading="Members">
               {members?.map((member) => (
-                <CommandItem  key={member._id} onSelect={() => setOpen(false)}>
+                <CommandItem key={member._id} onSelect={() => setOpen(false)}>
                   <Link href={`/workspace/${workspaceId}/member/${member._id}`}>
                     {member.user.name}
                   </Link>

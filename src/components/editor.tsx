@@ -100,7 +100,7 @@ const Editor = ({
       },
     };
 
-    var quill = new Quill(editorContainer, options);
+    let quill = new Quill(editorContainer, options);
     quillRef.current = quill;
     quillRef.current.focus();
 

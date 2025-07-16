@@ -20,7 +20,7 @@ import useChannelId from "@/hooks/use-channel-id";
 function WorkspaceSidebar() {
   const workspaceId = useWorkspaceId();
   const channelId = useChannelId();
-  const [_open, setOpen] = useCreateChannelModal();
+  const [_, setOpen] = useCreateChannelModal();
   const { data: member, isLoading: memberLoading } = useCurrentMember({
     workspaceId,
   });
@@ -36,7 +36,7 @@ function WorkspaceSidebar() {
     workspaceId,
   });
 
-  if (membersLoading || workspaceLoading) {
+  if (memberLoading || membersLoading || workspaceLoading || channelsLoading) {
     return (
       <div className="flex flex-col bg-[#5e2c5f] h-full items-center justify-center">
         <Loader className="size-5 animate-spin  text-white" />

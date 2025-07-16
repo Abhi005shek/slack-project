@@ -3,7 +3,6 @@ import { useGenerateUploadUrl } from "@/features/upload/api/use-generate-upload-
 import useChannelId from "@/hooks/use-channel-id";
 import useWorkspaceId from "@/hooks/use-workspace-id";
 import dynamic from "next/dynamic";
-import { resolve } from "path";
 import Quill from "quill";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
@@ -68,7 +67,7 @@ function ChatInput({ placeholder }: ChatInputProps) {
       await createMessage(values, { throwError: true });
 
       setEditorKey((prev) => prev + 1);
-    } catch (err) {
+    } catch {
       toast.error("Failed to send message");
     } finally {
       setIsPending(false);

@@ -49,7 +49,7 @@ function PreferencesModel({
         id: workspaceId,
       },
       {
-        onSuccess(data) {
+        onSuccess() {
           router.replace(`/`);
           toast.success("Workspace Removed");
         },
@@ -69,7 +69,7 @@ function PreferencesModel({
         name: value,
       },
       {
-        onSuccess(data) {
+        onSuccess() {
           toast.success("Workspace Updated");
           setEditOpen(false);
         },
