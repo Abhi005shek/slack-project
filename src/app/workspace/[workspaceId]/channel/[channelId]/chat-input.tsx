@@ -82,7 +82,7 @@ function ChatInput({ placeholder }: ChatInputProps) {
         // variant="update"
         placeholder={placeholder}
         onSubmit={handleSubmit}
-        // onCancel={() => {}}
+        onCancel={() => {}}
         disabled={pending}
         innerRef={editorRef}
       />

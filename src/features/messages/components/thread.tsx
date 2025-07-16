@@ -258,6 +258,7 @@ export const Thread = ({ messageId, onClose }: ThreadProps) => {
       <div className="px-4">
         <Editor
           key={editorKey}
+          onCancel={() => {}}
           onSubmit={handleSubmit}
           innerRef={editorRef}
           disabled={pending}
