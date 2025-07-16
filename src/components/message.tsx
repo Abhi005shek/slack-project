@@ -152,7 +152,7 @@ export const Message = ({
             {isEditing ? (
               <div className="h-full w-full">
                 <Editor
-                  placeholder=""
+                  placeholder="Message..."
                   onSubmit={handleUpdate}
                   disabled={isPending}
                   defaultValue={JSON.parse(body)}
