@@ -11,6 +11,7 @@ import { useCreateWorkspaceModal } from "@/features/workspaces/store/use-create-
 import useWorkspaceId from "@/hooks/use-workspace-id";
 import { Loader, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Doc } from "../../../../convex/_generated/dataModel";
 
 function WorkspaceSwitcher() {
   const router = useRouter();
@@ -21,7 +22,10 @@ function WorkspaceSwitcher() {
     id: workspaceId,
   });
 
-  const filterWorkspaces = workspaces?.filter((w) => w?._id !== workspaceId);
+  console.log("work", workspaces);
+  const filterWorkspaces = workspaces?.filter((w) => w._id !== workspaceId);
+
+  console.log("filtered", filterWorkspaces);
 
   return (
     <DropdownMenu>
@@ -48,17 +52,17 @@ function WorkspaceSwitcher() {
           </span>
         </DropdownMenuItem>
 
-        {filterWorkspaces?.map((workspace) => {
+        {filterWorkspaces?.map((w: any) => {
           return (
             <DropdownMenuItem
-              key={workspace._id}
-              onClick={() => router.push(`/workspace/${workspace._id}`)}
+              key={w._id}
+              onClick={() => router.push(`/workspace/${w._id}`)}
               className="cursor-pointer capitalize"
             >
               <div className="shrink-0 size-9 relative overflow-hidden bg-[#616061] text-white font-semibold text-lg rounded-md flex items-center justify-center mr-2">
-                {workspace.name.charAt(0).toUpperCase()}
+                {w.name.charAt(0).toUpperCase()}
               </div>
-              <p className="truncate">{workspace.name}</p>
+              <p className="truncate">{w.name}</p>
             </DropdownMenuItem>
           );
         })}
